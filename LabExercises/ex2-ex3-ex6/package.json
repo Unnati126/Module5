@@ -1,24 +1,22 @@
 {
-  "name": "ex2-ex3-ex6",
+  "name": "calculator-project",
   "version": "1.0.0",
+  "description": "Simple calculator API with Express",
   "main": "app.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "start": "node app.js",
     "test": "jest"
   },
-  "jest": {
-    "transform": {}
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "jest": "^29.7.0"
-  },
-  "description": "",
-  "devDependencies": {
-  }
+  "license": "ISC"
 }
