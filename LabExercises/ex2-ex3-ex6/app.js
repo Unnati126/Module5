@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.static('public')); // Serve static files
 
 // Routes
-app.use('/', calculatorRoutes);
+app.use('/calculator', calculatorRoutes);
 
 // Serve calculator.html at root '/'
 app.get('/', (_req, res) => {
