@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fake Store</title>
+</head>
+<body>
+  <h1>Fake Store</h1>
+  <ul id="productList"></ul>
+
+  <script>
+    fetch('/api/products')
+      .then(res => res.json())
+      .then(products => {
+        const list = document.getElementById('productList');
+        products.forEach(product => {
+          const li = document.createElement('li');
+          li.innerText = `${product.title} - $${product.price}`;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>

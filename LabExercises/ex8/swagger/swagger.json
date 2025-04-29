@@ -1,0 +1,44 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Fake Store API",
+      "version": "1.0.0",
+      "description": "API for fetching fake store products"
+    },
+    "paths": {
+      "/api/products": {
+        "get": {
+          "summary": "Get all products",
+          "responses": {
+            "200": {
+              "description": "A list of products"
+            }
+          }
+        }
+      },
+      "/api/products/{id}": {
+        "get": {
+          "summary": "Get product by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Product details"
+            },
+            "404": {
+              "description": "Product not found"
+            }
+          }
+        }
+      }
+    }
+  }
+  
