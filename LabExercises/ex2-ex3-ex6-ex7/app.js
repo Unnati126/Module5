@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const calculatorRoutes = require('./routes/calculator');
+const { logMessage } = require('./libraries/logger');
 
 const app = express();
 
@@ -22,26 +23,46 @@ app.get('/', (_req, res) => {
 app.get('/add', (req, res) => {
   const { a, b } = req.query;
   const result = Number(a) + Number(b);
-  res.json({ result });
+
+  const id = Math.floor(Math.random() * 1000000);
+  logMessage(id, 'add', result);
+  res.json({ id, result });
+
+  //res.json({ result });
 });
 
 app.get('/subtract', (req, res) => {
   const { a, b } = req.query;
   const result = Number(a) - Number(b);
-  res.json({ result });
+
+  const id = Math.floor(Math.random() * 1000000);
+  logMessage(id, 'subtract', result);
+  res.json({ id, result });
+
+  //res.json({ result });
 });
 
 app.get('/multiply', (req, res) => {
   const { a, b } = req.query;
   const result = Number(a) * Number(b);
-  res.json({ result });
+
+  const id = Math.floor(Math.random() * 1000000);
+  logMessage(id, 'multiply', result);
+  res.json({ id, result });
+
+  //res.json({ result });
 });
 
 app.get('/divide', (req, res) => {
   const { a, b } = req.query;
   if (Number(b) === 0) return res.status(400).json({ error: "Cannot divide by zero" });
   const result = Number(a) / Number(b);
-  res.json({ result });
+
+  const id = Math.floor(Math.random() * 1000000);
+  logMessage(id, 'divide', result);
+  res.json({ id, result });
+
+  //res.json({ result });
 });
 
 // Server listening
