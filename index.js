@@ -3,6 +3,13 @@ const userRoutes = require('./routes/userRoutes.js');
 // map the user routes to our app
 app.use('/users', userRoutes);
 
+const swaggerUi = require('swagger-ui-express');
+swaggerDocument = require('./swagger.json');
+app.use(
+'/api-docs',
+swaggerUi.serve,
+swaggerUi.setup(swaggerDocument)
+);
 
 const app = require('./app');
 // start the app to listen on the right port
