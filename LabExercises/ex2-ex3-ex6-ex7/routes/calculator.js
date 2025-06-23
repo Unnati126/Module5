@@ -12,9 +12,6 @@ router.get('/add', (req, res) => {
     const id = generateRandomId();
     logger(id, 'add', result);
     res.json({ id, result });
-
-    //const result = Number(a) + Number(b);
-    //res.json({ result });
 });
 
 // Subtract
@@ -24,9 +21,6 @@ router.get('/subtract', (req, res) => {
     const id = generateRandomId();
     logger(id, 'subtract', result);
     res.json({ id, result });
-
-    //const result = Number(a) - Number(b);
-    //res.json({ result });
 });
 
 // Multiply
@@ -36,9 +30,6 @@ router.get('/multiply', (req, res) => {
     const id = generateRandomId();
     logger(id, 'multiply', result);
     res.json({ id, result });
-
-    //const result = Number(a) * Number(b);
-    //res.json({ result });
 });
 
 // Divide
@@ -52,12 +43,6 @@ router.get('/divide', (req, res) => {
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
-
-    /*if (Number(b) === 0) {
-        return res.status(400).json({ error: "Cannot divide by zero" });
-    }
-    const result = Number(a) / Number(b);
-    res.json({ result });*/
 });
 
 module.exports = router;

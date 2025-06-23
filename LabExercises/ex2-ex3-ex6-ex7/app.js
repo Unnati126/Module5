@@ -27,8 +27,6 @@ app.get('/add', (req, res) => {
   const id = Math.floor(Math.random() * 1000000);
   logMessage(id, 'add', result);
   res.json({ id, result });
-
-  //res.json({ result });
 });
 
 app.get('/subtract', (req, res) => {
@@ -38,8 +36,6 @@ app.get('/subtract', (req, res) => {
   const id = Math.floor(Math.random() * 1000000);
   logMessage(id, 'subtract', result);
   res.json({ id, result });
-
-  //res.json({ result });
 });
 
 app.get('/multiply', (req, res) => {
@@ -49,8 +45,6 @@ app.get('/multiply', (req, res) => {
   const id = Math.floor(Math.random() * 1000000);
   logMessage(id, 'multiply', result);
   res.json({ id, result });
-
-  //res.json({ result });
 });
 
 app.get('/divide', (req, res) => {
@@ -61,8 +55,6 @@ app.get('/divide', (req, res) => {
   const id = Math.floor(Math.random() * 1000000);
   logMessage(id, 'divide', result);
   res.json({ id, result });
-
-  //res.json({ result });
 });
 
 // Server listening
@@ -71,5 +63,4 @@ app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
 
-// Export app (for tests)
 module.exports = app;
